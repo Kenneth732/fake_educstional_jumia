@@ -1,0 +1,1230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumia Careers · Join the team</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        /* Jumia brand colors */
+        :root {
+            --jumia-orange: #f68b1e;
+            --jumia-dark: #282828;
+            --jumia-gray: #f1f5f9;
+            --jumia-light: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Nav */
+        .navbar {
+            background-color: var(--jumia-light);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            padding: 16px 0;
+            border-bottom: 1px solid #e9eef3;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .jumia-logo {
+            background-color: var(--jumia-orange);
+            color: white;
+            font-weight: 800;
+            font-size: 1.7rem;
+            padding: 6px 14px 6px 18px;
+            border-radius: 30px 8px 8px 30px;
+            letter-spacing: -0.5px;
+            line-height: 1;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(246, 139, 30, 0.2);
+        }
+
+        .logo-area span {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #475569;
+            margin-left: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--jumia-orange);
+        }
+
+        .nav-links a.active {
+            color: var(--jumia-orange);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--jumia-orange);
+            border-radius: 4px;
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--jumia-orange);
+            background: transparent;
+            color: var(--jumia-orange);
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-outline:hover {
+            background-color: #fef3e7;
+        }
+
+        .btn-solid {
+            background-color: var(--jumia-orange);
+            border: none;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-solid:hover {
+            background-color: #e07a0c;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--jumia-dark);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffffff 70%);
+            padding: 56px 0 48px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: #fef0e0;
+            color: #b45309;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 18px;
+            border: 1px solid #fde0c8;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0f172a;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 i {
+            color: var(--jumia-orange);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 28px;
+            max-width: 640px;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px;
+            margin-top: 28px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--jumia-orange);
+            font-size: 1.6rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-text h4 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+
+        .stat-text p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0;
+        }
+
+        /* Search and filters */
+        .search-section {
+            background: white;
+            padding: 24px 0;
+            border-bottom: 1px solid #e9eef3;
+            box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.02);
+        }
+
+        .search-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1 1 320px;
+            display: flex;
+            align-items: center;
+            background: #f8fafc;
+            border: 1px solid #dbe3ec;
+            border-radius: 48px;
+            padding: 4px 6px 4px 20px;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--jumia-orange);
+            box-shadow: 0 0 0 3px rgba(246, 139, 30, 0.1);
+            background: white;
+        }
+
+        .search-box i {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            padding: 12px 16px;
+            font-size: 1rem;
+            width: 100%;
+            outline: none;
+            color: #1e293b;
+        }
+
+        .search-box input::placeholder {
+            color: #94a3b8;
+        }
+
+        .search-box button {
+            background: var(--jumia-orange);
+            border: none;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+            margin-right: 2px;
+        }
+
+        .search-box button:hover {
+            background: #e07a0c;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid #dbe3ec;
+            color: #334155;
+            padding: 10px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+            white-space: nowrap;
+        }
+
+        .filter-btn i {
+            margin-right: 6px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--jumia-orange);
+            background: #fff9f3;
+        }
+
+        .filter-btn.active {
+            background: var(--jumia-orange);
+            border-color: var(--jumia-orange);
+            color: white;
+        }
+
+        .filter-btn.active i {
+            color: white;
+        }
+
+        /* Job listings */
+        .jobs-section {
+            padding: 48px 0 64px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .section-header h2 span {
+            color: var(--jumia-orange);
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .job-count {
+            font-size: 0.95rem;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 6px 16px;
+            border-radius: 40px;
+        }
+
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #edf2f7;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: #fed7aa;
+        }
+
+        .job-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .company-logo {
+            background: #fef0e0;
+            color: var(--jumia-orange);
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .job-tag {
+            background: #eef2ff;
+            color: #4338ca;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .job-tag.remote {
+            background: #e6f7e6;
+            color: #0e7c3a;
+        }
+
+        .job-tag.hybrid {
+            background: #fff3e0;
+            color: #b45309;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 16px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .job-meta i {
+            margin-right: 6px;
+            color: #94a3b8;
+            width: 16px;
+        }
+
+        .job-description {
+            color: #475569;
+            font-size: 0.95rem;
+            margin-bottom: 22px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .job-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 18px;
+            margin-top: auto;
+        }
+
+        .salary {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 0.95rem;
+        }
+
+        .salary i {
+            color: var(--jumia-orange);
+            margin-right: 6px;
+        }
+
+        .apply-btn {
+            background: transparent;
+            border: none;
+            color: var(--jumia-orange);
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: gap 0.2s;
+            padding: 6px 0;
+        }
+
+        .apply-btn i {
+            font-size: 0.9rem;
+        }
+
+        .apply-btn:hover {
+            gap: 12px;
+            color: #e07a0c;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 24px;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+
+        .no-results h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+
+        .no-results p {
+            color: #64748b;
+        }
+
+        /* Testimonials / culture */
+        .culture-section {
+            background: white;
+            padding: 64px 0;
+            border-top: 1px solid #e9eef3;
+            border-bottom: 1px solid #e9eef3;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .culture-text h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .culture-text p {
+            color: #475569;
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+        }
+
+        .perks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .perk-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .perk-item i {
+            width: 40px;
+            height: 40px;
+            background: #fef0e0;
+            color: var(--jumia-orange);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .perk-item span {
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .culture-image {
+            background: linear-gradient(145deg, #fef0e0, #fff);
+            border-radius: 32px;
+            height: 100%;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fed7aa;
+            box-shadow: var(--shadow-sm);
+            padding: 24px;
+        }
+
+        .culture-image i {
+            font-size: 8rem;
+            color: var(--jumia-orange);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 48px 0 32px;
+            margin-top: 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--jumia-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: var(--jumia-orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .culture-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .culture-image {
+                min-height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding-top: 16px;
+                border-top: 1px solid #e9eef3;
+                margin-top: 8px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a.active::after {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-container {
+                justify-content: space-between;
+            }
+
+            .nav-actions {
+                display: flex;
+                gap: 12px;
+                margin-left: auto;
+                margin-right: 16px;
+            }
+
+            .hero {
+                padding: 40px 0 32px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .search-wrapper {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                flex: 1 1 auto;
+            }
+
+            .filter-tabs {
+                justify-content: flex-start;
+            }
+
+            .section-header {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+
+            .job-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .perks {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .jumia-logo {
+                font-size: 1.4rem;
+                padding: 5px 12px 5px 14px;
+            }
+
+            .logo-area span {
+                font-size: 0.9rem;
+            }
+
+            .nav-actions .btn-outline {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .search-box button {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .filter-btn {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo-area">
+                <span class="jumia-logo">Jumia</span>
+                <span>careers</span>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="active">Jobs</a>
+                <a href="#">Life at Jumia</a>
+                <a href="#">Teams</a>
+                <a href="#">Locations</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-outline">Sign in</button>
+                <button class="btn-solid">Create alert</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-bolt" style="margin-right: 8px;"></i> We're hiring across Africa
+            </div>
+            <h1>Build the future of <i>e‑commerce</i> in Africa</h1>
+            <p>Join a passionate team that's transforming online shopping for millions. Grow your career with Jumia.</p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="stat-text">
+                        <h4>120+</h4>
+                        <p>open roles</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-globe-africa"></i></div>
+                    <div class="stat-text">
+                        <h4>11</h4>
+                        <p>countries</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-text">
+                        <h4>5k+</h4>
+                        <p>team members</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search + filters -->
+    <section class="search-section">
+        <div class="container search-wrapper">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search by role, team or keyword...">
+                <button id="searchBtn">Search</button>
+            </div>
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-btn active" data-filter="all"><i class="fas fa-layer-group"></i> All</button>
+                <button class="filter-btn" data-filter="tech"><i class="fas fa-code"></i> Tech</button>
+                <button class="filter-btn" data-filter="marketing"><i class="fas fa-bullhorn"></i> Marketing</button>
+                <button class="filter-btn" data-filter="operations"><i class="fas fa-truck"></i> Operations</button>
+                <button class="filter-btn" data-filter="remote"><i class="fas fa-wifi"></i> Remote</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job listings -->
+    <section class="jobs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Open roles <span id="jobCount">(6)</span></h2>
+                <div class="job-count"><i class="far fa-clock"></i> Updated today</div>
+            </div>
+
+            <div class="job-grid" id="jobGrid">
+                <!-- Job cards will be injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture / perks -->
+    <section class="culture-section">
+        <div class="container culture-grid">
+            <div class="culture-text">
+                <h3>Why you'll love working here</h3>
+                <p>We're a diverse team of builders, thinkers, and doers. At Jumia, you'll work on meaningful challenges, learn from brilliant colleagues, and grow your career while shaping the future of commerce in Africa.</p>
+                <div class="perks">
+                    <div class="perk-item"><i class="fas fa-rocket"></i><span>Career growth</span></div>
+                    <div class="perk-item"><i class="fas fa-heart"></i><span>Health & wellness</span></div>
+                    <div class="perk-item"><i class="fas fa-laptop-house"></i><span>Flexible work</span></div>
+                    <div class="perk-item"><i class="fas fa-graduation-cap"></i><span>Learning budget</span></div>
+                    <div class="perk-item"><i class="fas fa-chart-line"></i><span>Performance bonus</span></div>
+                    <div class="perk-item"><i class="fas fa-plane"></i><span>Travel opportunities</span></div>
+                </div>
+            </div>
+            <div class="culture-image">
+                <i class="fas fa-handshake"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Jumia Careers</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Life at Jumia</a></li>
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Locations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Candidate hub</a></li>
+                        <li><a href="#">Interview tips</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Cookie policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Jumia Group. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // --- Job Data (realistic) ---
+            const jobs = [
+                {
+                    id: 1,
+                    title: "Senior Frontend Engineer",
+                    department: "tech",
+                    type: "Hybrid",
+                    location: "Lagos, Nigeria",
+                    salary: "₦12M - ₦18M",
+                    description: "Build cutting‑edge user interfaces for Jumia's e‑commerce platform. Work with React, TypeScript, and modern tooling.",
+                    tags: ["Full-time", "Hybrid"],
+                    icon: "fa-laptop-code"
+                },
+                {
+                    id: 2,
+                    title: "Growth Marketing Manager",
+                    department: "marketing",
+                    type: "Remote",
+                    location: "Nairobi, Kenya",
+                    salary: "KSh 6M - 9M",
+                    description: "Lead acquisition and retention campaigns across paid and organic channels. Drive measurable growth in East Africa.",
+                    tags: ["Full-time", "Remote"],
+                    icon: "fa-chart-simple"
+                },
+                {
+                    id: 3,
+                    title: "Logistics Operations Lead",
+                    department: "operations",
+                    type: "On-site",
+                    location: "Accra, Ghana",
+                    salary: "GH₵ 180K - 250K",
+                    description: "Oversee last‑mile delivery operations, manage a team of 30+ and optimize routes across the region.",
+                    tags: ["Full-time", "On-site"],
+                    icon: "fa-truck-fast"
+                },
+                {
+                    id: 4,
+                    title: "Data Scientist",
+                    department: "tech",
+                    type: "Hybrid",
+                    location: "Cairo, Egypt",
+                    salary: "E£ 800K - 1.2M",
+                    description: "Use machine learning to improve product recommendations, pricing, and demand forecasting.",
+                    tags: ["Full-time", "Hybrid"],
+                    icon: "fa-chart-line"
+                },
+                {
+                    id: 5,
+                    title: "Customer Experience Specialist",
+                    department: "operations",
+                    type: "Remote",
+                    location: "Remote (Africa)",
+                    salary: "Competitive",
+                    description: "Be the voice of Jumia. Resolve customer issues, gather feedback, and improve our service quality.",
+                    tags: ["Full-time", "Remote"],
+                    icon: "fa-headset"
+                },
+                {
+                    id: 6,
+                    title: "Brand & Communications Manager",
+                    department: "marketing",
+                    type: "On-site",
+                    location: "Abidjan, Côte d'Ivoire",
+                    salary: "CFA 30M - 45M",
+                    description: "Shape Jumia's brand narrative, manage PR, and lead creative campaigns across French‑speaking markets.",
+                    tags: ["Full-time", "On-site"],
+                    icon: "fa-bullhorn"
+                },
+                // Adding one more tech role for richness
+                {
+                    id: 7,
+                    title: "Backend Engineer (Node.js)",
+                    department: "tech",
+                    type: "Remote",
+                    location: "Remote (Africa)",
+                    salary: "$45K - $70K",
+                    description: "Design and build scalable microservices that power millions of transactions across the continent.",
+                    tags: ["Full-time", "Remote"],
+                    icon: "fa-server"
+                }
+            ];
+
+            // DOM elements
+            const jobGrid = document.getElementById('jobGrid');
+            const jobCountSpan = document.getElementById('jobCount');
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            let currentFilter = 'all';
+            let currentSearch = '';
+
+            // Toggle mobile menu
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+
+            // Render jobs based on filter + search
+            function renderJobs() {
+                let filtered = jobs.filter(job => {
+                    // department / type filter
+                    if (currentFilter !== 'all') {
+                        if (currentFilter === 'remote') {
+                            if (job.type !== 'Remote') return false;
+                        } else {
+                            if (job.department !== currentFilter) return false;
+                        }
+                    }
+
+                    // search filter (title, location, description)
+                    if (currentSearch.trim() !== '') {
+                        const query = currentSearch.toLowerCase();
+                        const matchesTitle = job.title.toLowerCase().includes(query);
+                        const matchesLocation = job.location.toLowerCase().includes(query);
+                        const matchesDesc = job.description.toLowerCase().includes(query);
+                        const matchesTags = job.tags.some(tag => tag.toLowerCase().includes(query));
+                        if (!matchesTitle && !matchesLocation && !matchesDesc && !matchesTags) return false;
+                    }
+
+                    return true;
+                });
+
+                // Update count
+                jobCountSpan.textContent = `(${filtered.length})`;
+
+                if (filtered.length === 0) {
+                    jobGrid.innerHTML = `
+                        <div class="no-results">
+                            <i class="fas fa-search"></i>
+                            <h3>No roles found</h3>
+                            <p>Try adjusting your search or filter to see more opportunities.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Generate cards
+                jobGrid.innerHTML = filtered.map(job => {
+                    // tag class based on type
+                    let tagClass = '';
+                    let tagText = job.type;
+                    if (job.type === 'Remote') tagClass = 'remote';
+                    else if (job.type === 'Hybrid') tagClass = 'hybrid';
+
+                    return `
+                        <div class="job-card" data-id="${job.id}">
+                            <div class="job-card-header">
+                                <div class="company-logo">
+                                    <i class="fas ${job.icon}"></i>
+                                </div>
+                                <span class="job-tag ${tagClass}">${tagText}</span>
+                            </div>
+                            <h3 class="job-title">${job.title}</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+                                <span><i class="fas fa-clock"></i> ${job.department.charAt(0).toUpperCase() + job.department.slice(1)}</span>
+                            </div>
+                            <p class="job-description">${job.description}</p>
+                            <div class="job-footer">
+                                <span class="salary"><i class="fas fa-money-bill-wave"></i> ${job.salary}</span>
+                                <button class="apply-btn" data-id="${job.id}">Apply <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // Filter button handler
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // remove active from all
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+                    currentFilter = filter;
+                    renderJobs();
+                });
+            });
+
+            // Search handler
+            function performSearch() {
+                currentSearch = searchInput.value;
+                renderJobs();
+            }
+
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Apply button (delegation)
+            jobGrid.addEventListener('click', (e) => {
+                const applyBtn = e.target.closest('.apply-btn');
+                if (applyBtn) {
+                    const jobId = applyBtn.getAttribute('data-id');
+                    const job = jobs.find(j => j.id == jobId);
+                    if (job) {
+                        alert(`✅ Application started for: ${job.title}\nWe'll redirect you to the application portal. (Demo)`);
+                    }
+                }
+            });
+
+            // Initial render
+            renderJobs();
+
+            // Optional: reset search input when filter clicked? keep as is.
+        })();
+    </script>
+</body>
+</html>
